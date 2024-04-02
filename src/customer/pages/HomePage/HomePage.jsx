@@ -1,5 +1,6 @@
 import React from 'react'
 import MainCarousel from '../../components/HomeCarousel/MainCarousel'
+import Navigation from '../../Navigation'
 
 const HomePage = () => {
   return (
