@@ -3,9 +3,9 @@ import AliceCarousel from "react-alice-carousel";
 import HomeSectionCard from "../Home_card/HomeSectionCard";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import { Button } from "@mui/material";
-import { men_kurta } from "../../../Data/men_kurta";
 
-const HomeSectionCarosel = () => {
+
+const HomeSectionCarosel = ({data, sectionName}) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const carouselRef = useRef(null);
 
@@ -33,12 +33,13 @@ const HomeSectionCarosel = () => {
     setActiveIndex(item);
   };
 
-  const items = men_kurta.slice(0, 10).map((item) => (
+  const items = data.slice(0, 10).map((item) => (
     <HomeSectionCard product={item} />
   ));
 
   return (
     <div className=" lg:px-8 border border-black">
+      <h2 className="text-2xl font-extrabold text-gray-800 py-5">{sectionName}</h2>
       <div className="relative p-5 ">
         <AliceCarousel
           ref={carouselRef}
