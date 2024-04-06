@@ -1,6 +1,6 @@
 import React from 'react'
 import MainCarousel from '../../components/HomeCarousel/MainCarousel'
-import Navigation from '../../Navigation'
+import Navigation from '../../components/Navigation/Navigation'
 import HomeSectionCarosel from '../../components/HomeSectionCarosel/HomeSectionCarosel'
 import { men_kurta } from "../../../Data/men_kurta";
 const HomePage = () => {

@@ -37,3 +37,14 @@
   }
 }
 
+/* styles.css */
+.item {
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  .item {
+      height: 500px; /* Adjust height for larger screens */
+  }
+}

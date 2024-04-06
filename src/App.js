@@ -1,6 +1,5 @@
-import logo from "./logo.svg";
 import "./App.css";
-import Navigation from "./customer/Navigation";
+import Navigation from "./customer/components/Navigation/Navigation";
 import HomePage from "./customer/pages/HomePage/HomePage";
 import Footer from "./customer/components/Footer/Footer";
 
