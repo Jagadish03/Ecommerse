@@ -66,7 +66,7 @@ export const navigation = {
           {
             name: 'New Arrivals',
             id: '#',
-            imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-04-detail-product-shot-01.jpg',
+            imageSrc: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQg-rFyepVzFtAztkT2VTPJ3bB8D6Lu7KSNnw&s',
             imageAlt: 'Drawstring top with elastic loop closure and textured interior padding.',
           },
           {
