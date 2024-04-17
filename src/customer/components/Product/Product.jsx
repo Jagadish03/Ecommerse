@@ -12,6 +12,7 @@ import ProductCard from "./ProductCard";
 import { men_kurta } from "../../../Data/men_kurta";
 import { SingleFilter, filters } from "./FilterData";
 import FilterListIcon from "@mui/icons-material/FilterList";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const sortOptions = [
   { name: "Price: Low to High", href: "#", current: false },
@@ -24,6 +25,30 @@ function classNames(...classes) {
 
 export default function Product() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleFilter = (value, sectionId) => {
+    const searchParams = new URLSearchParams(location.search);
+    let filterValue = searchParams.getAll(sectionId);
+
+    // Toggle the selected value
+    if (filterValue.includes(value)) {
+      filterValue = filterValue.filter((item) => item !== value);
+    } else {
+      filterValue.push(value);
+    }
+
+    // Update query parameters
+    if (filterValue.length > 0) {
+      searchParams.set(sectionId, filterValue.join(","));
+    } else {
+      searchParams.delete(sectionId);
+    }
+
+    const query = searchParams.toString();
+    navigate({ search: `?${query}` });
+  };
 
   return (
     <div className="bg-white">
@@ -262,7 +287,10 @@ export default function Product() {
                                     name={`${section.id}`}
                                     value={option.value}
                                     type="radio"
-                                    defaultChecked={option.checked}
+                                    checked={option.checked}
+                                    onChange={() =>
+                                      handleFilter(option.value, section.id)
+                                    }
                                     className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
                                   />
                                   <label
@@ -279,6 +307,7 @@ export default function Product() {
                       )}
                     </Disclosure>
                   ))}
+
                   {SingleFilter.map((section) => (
                     <Disclosure
                       as="div"
@@ -315,6 +344,9 @@ export default function Product() {
                                   className="flex items-center"
                                 >
                                   <input
+                                    onChange={() =>
+                                      handleFilter(option.value, section.id)
+                                    }
                                     id={`filter-mobile-${section.id}-${optionIdx}`}
                                     name={`${section.id}`}
                                     value={option.value}
