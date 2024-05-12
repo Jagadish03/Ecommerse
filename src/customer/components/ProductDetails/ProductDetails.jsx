@@ -1,6 +1,11 @@
 import { useState } from "react";
 import { StarIcon } from "@heroicons/react/20/solid";
 import { RadioGroup } from "@headlessui/react";
+import Rating from "@mui/material/Rating";
+import Button from "@mui/material/Button";
+import { px } from "framer-motion";
+import { Grid } from "@mui/material";
+import ProductReviewCard from "./ProductReviewCard";
 
 const product = {
   name: "Basic Tee 6-Pack",
@@ -35,14 +40,10 @@ const product = {
     { name: "Black", class: "bg-gray-900", selectedClass: "ring-gray-900" },
   ],
   sizes: [
-    { name: "XXS", inStock: false },
-    { name: "XS", inStock: true },
     { name: "S", inStock: true },
     { name: "M", inStock: true },
     { name: "L", inStock: true },
     { name: "XL", inStock: true },
-    { name: "2XL", inStock: true },
-    { name: "3XL", inStock: true },
   ],
   description:
     'The Basic Tee 6-Pack allows you to fully express your vibrant personality with three grayscale options. Feeling adventurous? Put on a heather gray tee. Want to be a trendsetter? Try our exclusive colorway: "Black". Need to add an extra pop of color to your outfit? Our white tee has you covered.',
@@ -145,42 +146,25 @@ export default function ProductDetails() {
             <div className="mt-4 lg:row-span-3 lg:mt-0">
               <h2 className="sr-only">Product information</h2>
               <div className="flex space-x-5 items-center text-lg lg:text-xl text-gray-900 mt-2">
-                <p className="font-semibold">4000</p>
+                <p className="font-semibold">₹ 4000</p>
                 <p className="opacity-60 line-through">8000</p>
-                <p className="text-green-500 font-semibold ">50%</p>
+                <p className="text-green-500 font-semibold ">50% off</p>
               </div>
 
               {/* Reviews */}
               <div className="mt-6">
-                <h3 className="sr-only">Reviews</h3>
-                <div className="flex items-center">
-                  <div className="flex items-center">
-                    {[0, 1, 2, 3, 4].map((rating) => (
-                      <StarIcon
-                        key={rating}
-                        className={classNames(
-                          reviews.average > rating
-                            ? "text-gray-900"
-                            : "text-gray-200",
-                          "h-5 w-5 flex-shrink-0"
-                        )}
-                        aria-hidden="true"
-                      />
-                    ))}
-                  </div>
-                  <p className="sr-only">{reviews.average} out of 5 stars</p>
-                  <a
-                    href={reviews.href}
-                    className="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500"
-                  >
-                    {reviews.totalCount} reviews
-                  </a>
+                <div className="flex items-center space-x-5">
+                  <Rating name="read-only" value={3} readOnly />
+                  <p className="opacity-50 text-sm">586865 Rating</p>
+                  <p className=" ml-3 text-sm text-indigo-600 font-medium">
+                    38702 Reviews
+                  </p>
                 </div>
               </div>
 
               <form className="mt-10">
                 {/* Colors */}
-                <div>
+                {/* <div>
                   <h3 className="text-sm font-medium text-gray-900">Color</h3>
 
                   <RadioGroup
@@ -219,18 +203,12 @@ export default function ProductDetails() {
                       ))}
                     </div>
                   </RadioGroup>
-                </div>
+                </div> */}
 
                 {/* Sizes */}
                 <div className="mt-10">
                   <div className="flex items-center justify-between">
                     <h3 className="text-sm font-medium text-gray-900">Size</h3>
-                    <a
-                      href="#"
-                      className="text-sm font-medium text-indigo-600 hover:text-indigo-500"
-                    >
-                      Size guide
-                    </a>
                   </div>
 
                   <RadioGroup
@@ -302,12 +280,12 @@ export default function ProductDetails() {
                   </RadioGroup>
                 </div>
 
-                <button
-                  type="submit"
-                  className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                <Button
+                  variant="contained"
+                  sx={{ mt: 3, px: 5, py: 2, bgcolor: "#9155fd" }}
                 >
-                  Add to bag
-                </button>
+                  Add to Cart
+                </Button>
               </form>
             </div>
 
@@ -347,6 +325,22 @@ export default function ProductDetails() {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* ratings and reviews */}
+        <section>
+          <h1 className="font-semibold text-lg pb-4">
+            Recent Reviews and Ratings
+          </h1>
+          <div className="border p-5">
+            <Grid container spacing={7}>
+              <Grid item xs={7}>
+                <div className="space-y-5">
+                    <ProductReviewCard />
+                </div>
+              </Grid>
+            </Grid>
           </div>
         </section>
       </div>
