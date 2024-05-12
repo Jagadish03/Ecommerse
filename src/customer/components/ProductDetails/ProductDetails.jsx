@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { StarIcon } from "@heroicons/react/20/solid";
 import { RadioGroup } from "@headlessui/react";
-import Rating from '@mui/material/Rating';
-import Button from '@mui/material/Button';
+import Rating from "@mui/material/Rating";
+import Button from "@mui/material/Button";
 import { px } from "framer-motion";
-
+import { Grid } from "@mui/material";
+import ProductReviewCard from "./ProductReviewCard";
 
 const product = {
   name: "Basic Tee 6-Pack",
@@ -153,9 +154,11 @@ export default function ProductDetails() {
               {/* Reviews */}
               <div className="mt-6">
                 <div className="flex items-center space-x-5">
-                <Rating name="read-only" value={3} readOnly />
-                <p className="opacity-50 text-sm">586865 Rating</p>
-                <p className=" ml-3 text-sm text-indigo-600 font-medium">38702 Reviews</p>
+                  <Rating name="read-only" value={3} readOnly />
+                  <p className="opacity-50 text-sm">586865 Rating</p>
+                  <p className=" ml-3 text-sm text-indigo-600 font-medium">
+                    38702 Reviews
+                  </p>
                 </div>
               </div>
 
@@ -277,7 +280,10 @@ export default function ProductDetails() {
                   </RadioGroup>
                 </div>
 
-                <Button variant="contained" sx={{ mt: 3, px: 5, py: 2 , bgcolor:"#9155fd" }}>
+                <Button
+                  variant="contained"
+                  sx={{ mt: 3, px: 5, py: 2, bgcolor: "#9155fd" }}
+                >
                   Add to Cart
                 </Button>
               </form>
@@ -319,6 +325,22 @@ export default function ProductDetails() {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* ratings and reviews */}
+        <section>
+          <h1 className="font-semibold text-lg pb-4">
+            Recent Reviews and Ratings
+          </h1>
+          <div className="border p-5">
+            <Grid container spacing={7}>
+              <Grid item xs={7}>
+                <div className="space-y-5">
+                    <ProductReviewCard />
+                </div>
+              </Grid>
+            </Grid>
           </div>
         </section>
       </div>
