@@ -337,7 +337,7 @@ export default function ProductDetails() {
             <Grid container spacing={7}>
               <Grid item xs={7}>
                 <div className="space-y-5">
-                    <ProductReviewCard />
+                  <ProductReviewCard />
                 </div>
               </Grid>
             </Grid>
