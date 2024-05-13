@@ -4,7 +4,7 @@ import { RadioGroup } from "@headlessui/react";
 import Rating from "@mui/material/Rating";
 import Button from "@mui/material/Button";
 import { px } from "framer-motion";
-import { Grid } from "@mui/material";
+import { Box, Grid, LinearProgress } from "@mui/material";
 import ProductReviewCard from "./ProductReviewCard";
 
 const product = {
@@ -337,8 +337,38 @@ export default function ProductDetails() {
             <Grid container spacing={7}>
               <Grid item xs={7}>
                 <div className="space-y-5">
-                  {[1,1,1].map((item)=><ProductReviewCard key={item} />)} 
+                  {[1, 1, 1].map((item) => (
+                    <ProductReviewCard key={item} />
+                  ))}
                 </div>
+              </Grid>
+              <Grid item xs={5}>
+                <h1 className="text-xl font-semibold pb-1 ">Product Ratings</h1>
+                <div className="flex items-center space-x-3">
+                  <Rating value={4.5} precision={0.5} readOnly />
+                  <p className="text-gray-500">56739 reviews</p>
+                </div>
+
+                <Box>
+                  <Grid
+                    container
+                    justifyContent="center"
+                    alignContent="center"
+                    gap={2}
+                  >
+                    <Grid item xs={2}>
+                      <p>Excellent</p>
+                    </Grid>
+                    <Grid item xs={7}>
+                      <LinearProgress
+                        variant="determinate"
+                        color="success"
+                        value={40}
+                        sx={{ bgcolor: "wheat", borderRadius: 4, height: 7, mt: 2 }}
+                      />
+                    </Grid>
+                  </Grid>
+                </Box>
               </Grid>
             </Grid>
           </div>
