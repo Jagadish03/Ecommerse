@@ -6,7 +6,8 @@ import Button from "@mui/material/Button";
 import { px } from "framer-motion";
 import { Box, Grid, LinearProgress } from "@mui/material";
 import ProductReviewCard from "./ProductReviewCard";
-
+import HomeSectionCard from "../Home_card/HomeSectionCard";
+import { men_kurta } from "../../../Data/men_kurta";
 const product = {
   name: "Basic Tee 6-Pack",
   price: "$192",
@@ -453,6 +454,17 @@ export default function ProductDetails() {
             </Grid>
           </div>
         </section>
+
+        {/* similar products */}
+        <section className="pt-10">
+          <h1 className="font-bold text-xl mb-5 text-center">Similar Products</h1>
+          <div className="flex flex-wrap space-y-5 justify-center align-middle">
+            {men_kurta.map((item) => (
+              <HomeSectionCard key={item.id} product={item} />
+            ))}
+          </div>
+        </section>
+
       </div>
     </div>
   );
