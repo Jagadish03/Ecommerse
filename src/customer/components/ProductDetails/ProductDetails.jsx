@@ -343,7 +343,7 @@ export default function ProductDetails() {
                 </div>
               </Grid>
               <Grid item xs={5}>
-                <h1 className="text-xl font-semibold pb-1 ">Product Ratings</h1>
+                <h1 className="text-xl font-semibold pb-4 ">Product Ratings</h1>
                 <div className="flex items-center space-x-3">
                   <Rating value={4.5} precision={0.5} readOnly />
                   <p className="text-gray-500">56739 reviews</p>
