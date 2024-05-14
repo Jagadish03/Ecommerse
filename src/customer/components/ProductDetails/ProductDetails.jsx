@@ -349,13 +349,8 @@ export default function ProductDetails() {
                   <p className="text-gray-500">56739 reviews</p>
                 </div>
 
-                <Box>
-                  <Grid
-                    container
-                    justifyContent="center"
-                    alignContent="center"
-                    gap={2}
-                  >
+                <Box className="mt-5">
+                  <Grid container alignContent="center" gap={2}>
                     <Grid item xs={2}>
                       <p>Excellent</p>
                     </Grid>
@@ -363,8 +358,93 @@ export default function ProductDetails() {
                       <LinearProgress
                         variant="determinate"
                         color="success"
+                        value={60}
+                        sx={{
+                          bgcolor: "wheat",
+                          borderRadius: 4,
+                          height: 7,
+                          mt: 1,
+                        }}
+                      />
+                    </Grid>
+                  </Grid>
+                </Box>
+                <Box className="mt-5">
+                  <Grid container alignContent="center" gap={2}>
+                    <Grid item xs={2}>
+                      <p>Very Good</p>
+                    </Grid>
+                    <Grid item xs={7}>
+                      <LinearProgress
+                        variant="determinate"
+                        color="success"
+                        value={50}
+                        sx={{
+                          bgcolor: "wheat",
+                          borderRadius: 4,
+                          height: 7,
+                          mt: 1,
+                        }}
+                      />
+                    </Grid>
+                  </Grid>
+                </Box>
+                <Box className="mt-5">
+                  <Grid container alignContent="center" gap={2}>
+                    <Grid item xs={2}>
+                      <p>Good</p>
+                    </Grid>
+                    <Grid item xs={7}>
+                      <LinearProgress
+                        variant="determinate"
+                        color="secondary"
                         value={40}
-                        sx={{ bgcolor: "wheat", borderRadius: 4, height: 7, mt: 2 }}
+                        sx={{
+                          bgcolor: "wheat",
+                          borderRadius: 4,
+                          height: 7,
+                          mt: 1,
+                        }}
+                      />
+                    </Grid>
+                  </Grid>
+                </Box>
+                <Box className="mt-5">
+                  <Grid container alignContent="center" gap={2}>
+                    <Grid item xs={2}>
+                      <p>Average</p>
+                    </Grid>
+                    <Grid item xs={7}>
+                      <LinearProgress
+                        variant="determinate"
+                        color="warning"
+                        value={30}
+                        sx={{
+                          bgcolor: "wheat",
+                          borderRadius: 4,
+                          height: 7,
+                          mt: 1,
+                        }}
+                      />
+                    </Grid>
+                  </Grid>
+                </Box>
+                <Box className="mt-5">
+                  <Grid container alignContent="center" gap={2}>
+                    <Grid item xs={2}>
+                      <p>Poor</p>
+                    </Grid>
+                    <Grid item xs={7}>
+                      <LinearProgress
+                        variant="determinate"
+                        color="error"
+                        value={20}
+                        sx={{
+                          bgcolor: "wheat",
+                          borderRadius: 4,
+                          height: 7,
+                          mt: 1,
+                        }}
                       />
                     </Grid>
                   </Grid>
