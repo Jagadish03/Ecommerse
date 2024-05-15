@@ -36,7 +36,7 @@ const CartItems = () => {
           </IconButton>
         </div>
         <div>
-          <Button variant="outlined" startIcon={<DeleteIcon />} >
+          <Button variant="outlined" startIcon={<DeleteIcon />}>
             Remove
           </Button>
         </div>

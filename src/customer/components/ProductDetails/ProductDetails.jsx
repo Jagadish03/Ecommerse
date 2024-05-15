@@ -457,14 +457,15 @@ export default function ProductDetails() {
 
         {/* similar products */}
         <section className="pt-10">
-          <h1 className="font-bold text-xl mb-5 text-center">Similar Products</h1>
+          <h1 className="font-bold text-xl mb-5 text-center">
+            Similar Products
+          </h1>
           <div className="flex flex-wrap space-y-5 justify-center align-middle">
             {men_kurta.map((item) => (
               <HomeSectionCard key={item.id} product={item} />
             ))}
           </div>
         </section>
-
       </div>
     </div>
   );

@@ -31,7 +31,18 @@ const Cart = () => {
                 <span className="text-green-500">₹4045</span>
               </div>
             </div>
-            <Button variant="contained" className="w-full " sx={{px:'2.5rem', py:'0.8rem', bgcolor: '#9155fd', my:'2rem'}} >Checkout</Button>
+            <Button
+              variant="contained"
+              className="w-full "
+              sx={{
+                px: "2.5rem",
+                py: "0.8rem",
+                bgcolor: "#9155fd",
+                my: "2rem",
+              }}
+            >
+              Checkout
+            </Button>
           </div>
         </div>
       </div>
