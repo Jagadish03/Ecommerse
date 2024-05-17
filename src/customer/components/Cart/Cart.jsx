@@ -20,15 +20,15 @@ const Cart = () => {
               </div>
               <div className="flex justify-between pt-3 ">
                 <span>Discount</span>
-                <span className="text-green-500">₹500</span>
+                <span className="text-green-500">₹ 500</span>
               </div>
               <div className="flex justify-between pt-3 ">
                 <span>Delivery Charges</span>
-                <span className="text-green-500">₹45</span>
+                <span className="text-green-500">₹ 45</span>
               </div>
               <div className="flex justify-between pt-3  font-bold">
                 <span>Total Amount</span>
-                <span className="text-green-500">₹4045</span>
+                <span className="text-green-500">₹ 4045</span>
               </div>
             </div>
             <Button
